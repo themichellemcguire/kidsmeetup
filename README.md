@@ -33,8 +33,23 @@ In our busy life, out kidz are getting glued in the device,which is not good for
 Describe how to install / setup your local environement / add link to demo version.
 
 ## Code Examples
-Show examples of usage:
-`put-your-code-here`
+from django.db import models
+
+class Parent(models.Model):
+    name=models.CharField(max_length=100)
+    address=models.CharField(max_length=100)
+
+class Event(models.Model):
+    name:models.CharField(max_length=2)
+    address:models.CharField(max_length=100)
+    parent=models.ForeignKey(Parent,on_delete=100)
+    
+class Child(models.Model):
+    name=models.CharField(max_length=100)
+    date_of_birth=models.DateField()
+    parent=models.ForeignKey(Parent,on_delete=models.CASCADE)
+    event=models.ForeignKey(Event,on_delete=models.CASCADE)
+
 
 ## Features
 List of features ready and TODOs for future development
