@@ -1,4 +1,4 @@
-# Project Name
+# Kids Meetup
 > Social activities of our kids!! Awesome! right? But how and where? We have those answers. In out everyday busy life,our kids are getting bored and find the fun at the device. Not right ya. But in our neighbourhood, we can be feeling safer place for fun of our kids. So our Project name is KIDS MEETUP. 
 
 ## Table of contents
