@@ -5,6 +5,10 @@
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
+* [Links](#links)
+* [RESTful API endpoints](#RESTful_API)
+* [Problems](#problems)
+* [Future enhancement](#futures)
 * [Setup](#setup)
 * [Features](#features)
 * [Status](#status)
@@ -33,6 +37,15 @@ In our busy life, out kidz are getting glued in the device,which is not good for
 
 * [pitch-deck](https://github.com/fagleyali/kidsmeetup)
 * [trello](https://trello.com/b/uNiUV3Hu)
+* [Heroku](https://id.heroku.com/login)
+
+## RESTful_API
+
+RESTful API documentation.
+
+## Problems
+
+## Futures
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
