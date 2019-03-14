@@ -29,6 +29,11 @@ In our busy life, out kidz are getting glued in the device,which is not good for
 * Django - version 2.0
 * Postgresql - version 11.0
 
+## Links
+
+* [pitch-deck](https://github.com/fagleyali/kidsmeetup)
+* [trello](https://trello.com/b/uNiUV3Hu)
+
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
 
