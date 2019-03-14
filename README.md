@@ -15,7 +15,13 @@
 In our busy life, out kidz are getting glued in the device,which is not good for our future. We just try to find the way for a safer and comfort place in our neighbourhood by this app.
 
 ## Screenshots
-![Wireframe1](./img/wirefrmame1.png)
+![Wireframe1](./img/wireframe1.png)
+![Wireframe1](./img/wireframe1.png)
+![Wireframe1](./img/wireframe1.png)
+![Wireframe1](./img/wireframe1.png)
+![Wireframe1](./img/wireframe1.png)
+![Wireframe1](./img/wireframe1.png)
+![ERD](./img/wERD for Kids Meetup.pdf)
 
 ## Technologies
 * HTML5, JavaScript ES6, CSS3, 
