@@ -21,7 +21,7 @@ In our busy life, out kidz are getting glued in the device,which is not good for
 ![Wireframe1](./img/wireframe1.png)
 ![Wireframe1](./img/wireframe1.png)
 ![Wireframe1](./img/wireframe1.png)
-![ERD](./img/wERD for Kids Meetup.pdf)
+![ERD](./img/ERD.pdf)
 
 ## Technologies
 * HTML5, JavaScript ES6, CSS3, 
@@ -62,4 +62,4 @@ Project is: pre project work just started. We are preparing the set up for the p
 Add here credits. Project inspired by #GENERAL ASSEMBLY#
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by [@DATX team]- feel free to contact me!
