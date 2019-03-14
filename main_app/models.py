@@ -5,6 +5,7 @@ from django.db import models
 class Parent(models.Model):
     name=models.CharField(max_length=100)
     address=models.CharField(max_length=100)
+    phone=models.CharField(max_length=10)
 
 class Event(models.Model):
     name:models.CharField(max_length=2)
