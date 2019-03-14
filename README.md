@@ -16,11 +16,11 @@ In our busy life, out kidz are getting glued in the device,which is not good for
 
 ## Screenshots
 ![Wireframe1](./img/wireframe1.png)
-![Wireframe1](./img/wireframe1.png)
-![Wireframe1](./img/wireframe1.png)
-![Wireframe1](./img/wireframe1.png)
-![Wireframe1](./img/wireframe1.png)
-![Wireframe1](./img/wireframe1.png)
+![Wireframe1](./img/wireframe2.png)
+![Wireframe1](./img/wireframe3.png)
+![Wireframe1](./img/wireframe4.png)
+![Wireframe1](./img/wireframe5.png)
+![Wireframe1](./img/wireframe6.png)
 ![ERD](./img/ERD.pdf)
 
 ## Technologies
