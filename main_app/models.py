@@ -21,6 +21,7 @@ class Parent(models.Model):
     name=models.CharField(max_length=100)
     address=models.CharField(max_length=100)
     phone=models.CharField(max_length=10)
+    user=models.OneToOneField(User,on_delete=models.CASCADE)
     
 
     def __str__(self):
@@ -29,8 +30,9 @@ class Parent(models.Model):
 class Event(models.Model):
     name=models.CharField(max_length=100)
     address=models.CharField(max_length=100)
-    # date=models.DateTimeField()
-    parent=models.ForeignKey(Parent,on_delete=100)
+    date=models.DateTimeField()
+    parent=models.ForeignKey(Parent,on_delete=models.CASCADE)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -47,6 +49,7 @@ class Child(models.Model):
     )
     parent=models.ForeignKey(Parent,on_delete=models.CASCADE)
     event=models.ForeignKey(Event,on_delete=models.CASCADE)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
