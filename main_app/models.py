@@ -21,11 +21,14 @@ class Parent(models.Model):
     name=models.CharField(max_length=100)
     address=models.CharField(max_length=100)
     phone=models.CharField(max_length=10)
+ 
     user=models.OneToOneField(User,on_delete=models.CASCADE)
+
     
 
     def __str__(self):
         return self.name
+
 
 class Event(models.Model):
     name=models.CharField(max_length=100)
