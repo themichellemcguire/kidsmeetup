@@ -20,12 +20,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto" >
+                {%if user.is_authenticated %}
                 <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="{% url 'events_list' %}" class="nav-link">View All Events</a></li>
-                <li class="nav-item"><a href="/" class="nav-link">Sign Up</a></li>
-                <li class="nav-item"><a href="/" class="nav-link">Sign In</a></li>
-                <li class="nav-item"><a href="/" class="nav-link">Sign Out</a></li>
-
+                
+                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Sign Out</a></li>
+                {%else%}
+                <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link">Sign Up</a></li>
+                <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Sign In</a></li>
+                {%endif%}
             </ul>
         </div>
         </nav>
