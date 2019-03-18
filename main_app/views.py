@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.http import HttpResponse 
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Event
@@ -16,7 +16,11 @@ class EventList(LoginRequiredMixin, ListView):
 
 class EventCreate(LoginRequiredMixin, CreateView):
     model = Event
-    fields = '__all__'
+    fields = [
+        'name',
+        'address',
+        'date'
+    ]
     success_url = '/events/'
 
     def form_valid(self, form):
@@ -39,7 +43,7 @@ def signup(request):
         if form.is_valid():
             user=form.save()
             login(request,user)
-            return redirect('events_list')
+            return redirect('index')
         else:
             error_message='Invalid credentials: Try again'
     form=UserCreationForm()
