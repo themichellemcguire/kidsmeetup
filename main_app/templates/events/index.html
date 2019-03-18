@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<h1>Meetup List</h1>
+<hr>
+
+{% for event in events%}
+<a href="/events/{{event.id}}">
+    <div class="card">
+        
+            <div class="card-body">
+                
+                <span>{{event.name}}</span>
+                <p>Description:{{event.description}}</p>       
+            </div>
+    </div>
+</a>
+<hr>
+{% endfor %}
+
+{% endblock%}
