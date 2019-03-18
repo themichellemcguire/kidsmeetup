@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.http import HttpResponse 
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Event
@@ -16,7 +16,11 @@ class EventList(LoginRequiredMixin, ListView):
 
 class EventCreate(LoginRequiredMixin, CreateView):
     model = Event
-    fields = '__all__'
+    fields = [
+        'name',
+        'address',
+        'date'
+    ]
     success_url = '/events/'
 
     def form_valid(self, form):
