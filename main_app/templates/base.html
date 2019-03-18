@@ -23,6 +23,7 @@
                 {%if user.is_authenticated %}
                 <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="{% url 'events_list' %}" class="nav-link">View All Events</a></li>
+                <li class="nav-item"><a href="{% url 'events_create' %}" class="nav-link">Create an Event</a></li>
                 
                 <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Sign Out</a></li>
                 {%else%}
