@@ -11,10 +11,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 
-class EventList(LoginRequiredMixin, ListView):
+class EventList(ListView):
     model = Event
-
-class EventCreate(LoginRequiredMixin, CreateView):
+# LoginRequiredMixin
+class EventCreate(CreateView):
     model = Event
     fields = [
         'name',
