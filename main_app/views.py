@@ -43,7 +43,7 @@ def signup(request):
         if form.is_valid():
             user=form.save()
             login(request,user)
-            return redirect('index')
+            return redirect('events_list')
         else:
             error_message='Invalid credentials: Try again'
     form=UserCreationForm()
