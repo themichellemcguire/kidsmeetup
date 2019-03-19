@@ -1,0 +1,40 @@
+body{
+    background-color:#001d4a;
+    color: #eaf8bf;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  a:hover{
+    text-decoration: none;
+  }
+  
+  hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 2px solid #001d4a;
+      margin: 1em 0;
+      padding: 0; 
+  }
+  
+  .navbar{
+    background-color: #27476e;
+    
+  }
+  .navbar-nav li a{
+    color: #eaf8bf
+  }
+  .container{
+    text-align: center;
+  }
+  .card-body{
+    background-color:#eaf8bf;
+    padding: 20px;
+  }
+  
+  .dropdown-menu{
+    background-color:#27476e;
+  }
