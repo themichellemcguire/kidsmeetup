@@ -16,6 +16,3 @@ class Child(models.Model):
     date_of_birth=models.DateField()
     parent=models.ForeignKey(Parent,on_delete=models.CASCADE)
     event=models.ForeignKey(Event,on_delete=models.CASCADE)
-
-
-    
