@@ -2,6 +2,8 @@ from django.db import models
 from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 
@@ -24,10 +26,20 @@ class Parent(models.Model):
  
     user=models.OneToOneField(User,on_delete=models.CASCADE)
 
-    
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Parent.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.parent.save()
+
 
     def __str__(self):
         return self.name
+    
+    
 
 
 class Event(models.Model):
@@ -39,6 +51,9 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('events_detail',kwargs={'pk':self.id})
     
     def get_absolute_url(self):
         return reverse('detail', kwargs={'event_id': self.id})
