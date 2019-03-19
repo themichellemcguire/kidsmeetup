@@ -4,20 +4,15 @@
     {% if object %}
         <h1>Edit <span>{{ object.name }}</span></h1>
     {% else %}
-        <h1>Create an Event</h1>
+        <h1>Create a Meetup</h1>
     {% endif %}
     <form action="" method="post" >
         {%csrf_token%}
     <table>
-
-            {{form.as_table}}
-
+        {{form.as_table}}
     </table>
 
-    <input type="submit" value="Create Event" class="btn btn-secondary" name="" id="">
-
-        
-
+    <input type="submit" value="Create Meetup" class="btn btn-secondary" name="" id="">
     </form>
 
 

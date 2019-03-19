@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<h1>Details</h1>
+
+<a href="/events/{{event.name}}">
+    <div class="card">
+
+        <div class="card-body">
+
+            <span>{{event.name}}</span>
+            <p>Description:{{event.description}}</p>
+            <a href="{% url 'events_update' event.name%}">Edit</a>
+            <a href="{%url 'events_delete' event.name%}">Delete</a>
+        </div>
+        
+    </div>
+</a>
+
+
+
+{% endblock %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Event
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -12,28 +12,41 @@ from django.contrib import messages
 
 # Create your views here.
 
-def home(request):
-    return HttpResponse('<h1>Kids Meetup Home</h1>')
-
 
 class EventList(LoginRequiredMixin, ListView):
     model = Event
 
+
 class EventDetail(LoginRequiredMixin, DetailView):
     model = Event
 
-
 class EventCreate(LoginRequiredMixin, CreateView):
     model = Event
-    fields=['name','address','date']
+    fields = [
+        'name',
+        'address',
+        'date'
+    ]
+    success_url = '/events/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+
         form.instance.parent=self.request.user.parent
         return super().form_valid(form)
 
     # success_url='/events/'
     
+
+        return super().form_valid(form)
+
+class EventUpdate(UpdateView):
+    model=Event
+    fields = '__all__'
+
+class EventDelete(DeleteView):
+    model=Event
+    success_url = '/events/'
 
 
 
@@ -57,6 +70,7 @@ def signup(request):
     
     context={'form': form, 'error_message':error_message}
     return render(request, 'registration/signup.html',context)
+
 
 def CreateProfile(request):
     # error_message = ''
@@ -82,4 +96,11 @@ def CreateProfile(request):
     return render(request, 'registration/signup.html', {
         'user_form': user_form,
         'parent_form': parent_form
-    })
+
+def home(request):
+    return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+

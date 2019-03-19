@@ -23,6 +23,7 @@ class Parent(models.Model):
     name=models.CharField(max_length=100)
     address=models.CharField(max_length=100)
     phone=models.CharField(max_length=10)
+ 
     user=models.OneToOneField(User,on_delete=models.CASCADE)
 
 @receiver(post_save, sender=User)
@@ -34,10 +35,12 @@ def create_user_profile(sender, instance, created, **kwargs):
 def save_user_profile(sender, instance, **kwargs):
     instance.parent.save()
 
+
     def __str__(self):
         return self.name
     
     
+
 
 class Event(models.Model):
     name=models.CharField(max_length=100)
@@ -52,7 +55,8 @@ class Event(models.Model):
     def get_absolute_url(self):
         return reverse('events_detail',kwargs={'pk':self.id})
     
-    
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'event_id': self.id})
     
 class Child(models.Model):
     name=models.CharField(max_length=100)
