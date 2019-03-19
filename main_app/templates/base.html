@@ -35,13 +35,13 @@
                             Meetups
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'index'%}">View All Meetups</a>
+                            <a class="dropdown-item" href="{% url 'events_list'%}">View All Meetups</a>
                             <a class="dropdown-item" href="{% url 'events_create'%}">Add a Meetup</a>
                             
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/profile">Profile</a>
+                        <a class="nav-link" href="#">Profile</a>
                     </li>
                     <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Sign Out</a></li>
                     {%else%}
