@@ -26,8 +26,10 @@ class EventCreate(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-
+        form.instance.parent=self.request.user.parent
         return super().form_valid(form)
+    success_url='/events/'
+
 
 
 def signup(request):
