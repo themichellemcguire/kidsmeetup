@@ -81,7 +81,7 @@ def CreateProfile(request):
             login(request,user)
             return redirect('events_list')
             # messages.success(request, 'Your profile was successfully updated!')
-            # return redirect('settings:profile')
+           
         else:
             messages.error(request, 'Please correct the error below.')
     else:
