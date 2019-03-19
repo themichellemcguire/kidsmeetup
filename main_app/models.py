@@ -55,8 +55,7 @@ class Event(models.Model):
     def get_absolute_url(self):
         return reverse('events_detail',kwargs={'pk':self.id})
     
-    def get_absolute_url(self):
-        return reverse('detail', kwargs={'event_id': self.id})
+    
     
 class Child(models.Model):
     name=models.CharField(max_length=100)

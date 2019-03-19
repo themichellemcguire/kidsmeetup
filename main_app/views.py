@@ -27,8 +27,7 @@ class EventCreate(LoginRequiredMixin, CreateView):
         'address',
         'date'
     ]
-    success_url = '/events/'
-
+    
     def form_valid(self, form):
         form.instance.user = self.request.user
 
@@ -73,14 +72,9 @@ def signup(request):
 
 
 def CreateProfile(request):
-    # error_message = ''
-    
-
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
         parent_form = ParentForm(request.POST, instance=request.user.parent)
-
-        
         if user_form.is_valid() and parent_form.is_valid():
             user=user_form.save()
             parent_form.save()
@@ -96,6 +90,8 @@ def CreateProfile(request):
     return render(request, 'registration/signup.html', {
         'user_form': user_form,
         'parent_form': parent_form
+    })
+
 
 def home(request):
     return render(request, 'home.html')
