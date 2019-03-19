@@ -49,8 +49,8 @@ class Event(models.Model):
     def __str__(self):
         return self.name
 
-    # def get_absolute_url(self):
-    #     return reverse('events_list',kwargs={'event_id':self.id})
+    def get_absolute_url(self):
+        return reverse('events_detail',kwargs={'pk':self.id})
     
     
     

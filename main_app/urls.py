@@ -4,8 +4,8 @@ from . import views
 urlpatterns = [
     path('',views.home,name='home'),
     path('events/', views.EventList.as_view(),name='events_list'),
-    path('events/<int:pk'/,views.EventDetail)
-    path('events/create', views.EventCreate.as_view(),name='events_create'),
+    path('events/<int:pk>/',views.EventDetail.as_view(),name='events_detail'),
+    path('events/create/', views.EventCreate.as_view(),name='events_create'),
 
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup', views.signup,name='signup' ),

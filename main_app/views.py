@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 from .models import Event
 from django.contrib.auth import login
@@ -19,6 +19,9 @@ def home(request):
 class EventList(LoginRequiredMixin, ListView):
     model = Event
 
+class EventDetail(LoginRequiredMixin, DetailView):
+    model = Event
+
 
 class EventCreate(LoginRequiredMixin, CreateView):
     model = Event
@@ -28,7 +31,9 @@ class EventCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         form.instance.parent=self.request.user.parent
         return super().form_valid(form)
-    success_url='/events/'
+
+    # success_url='/events/'
+    
 
 
 

@@ -5,7 +5,7 @@
 
         <h1 >Event List</h1>
         {% for e in event_list %}
-        <a href="/">
+        <a href="{% url 'events_detail' e.id %}">
 <div class="card" style="border-radius: 20px;">
     <div class="card-content">
         <div class="card-header-blue">
