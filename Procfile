@@ -1,1 +1,1 @@
-web: gunicorn kidsmeetupdatx.wsgi
+web: gunicorn kidsmeetup.wsgi
