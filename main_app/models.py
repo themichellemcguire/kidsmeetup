@@ -7,6 +7,21 @@ from django.dispatch import receiver
 
 # Create your models here.
 
+
+
+ALLERGY_FOODS = (
+    ('M', 'Milk'),
+    ('E','Eggs'),
+    ('P','Peanuts'),
+    ('T','Treenuts'),
+    ('S', 'Soy'),
+    ('W','Wheat'),
+    ('F','Fish'),
+    ('L','Shellfish')
+)
+    
+
+
 class Parent(models.Model):
     name=models.CharField(max_length=100)
     address=models.CharField(max_length=100)

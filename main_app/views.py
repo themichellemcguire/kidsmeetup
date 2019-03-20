@@ -34,16 +34,16 @@ class EventCreate(LoginRequiredMixin, CreateView):
         form.instance.parent=self.request.user.parent
         return super().form_valid(form)
 
-    # success_url='/events/'
-    
-
-        return super().form_valid(form)
-
-class EventUpdate(UpdateView):
+ 
+class EventUpdate(LoginRequiredMixin,UpdateView):
     model=Event
-    fields = '__all__'
+    fields = [
+        'name',
+        'address',
+        'date'
+    ]
 
-class EventDelete(DeleteView):
+class EventDelete(LoginRequiredMixin, DeleteView):
     model=Event
     success_url = '/events/'
 
@@ -81,7 +81,7 @@ def CreateProfile(request):
             login(request,user)
             return redirect('events_list')
             # messages.success(request, 'Your profile was successfully updated!')
-            # return redirect('settings:profile')
+           
         else:
             messages.error(request, 'Please correct the error below.')
     else:
