@@ -1,27 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row">
-    <div class="col s4 col-offset-3">
-        <div class="card bg-#eaf8bf">
-            <div class="card-content text-#eaf8bf">
-                {% if object %}
-                    <h1>Edit <span>{{ object.name }}</span></h1>
-                {% else %}
-                    <h1>Create a Meetup</h1>
-                {% endif %}
-                <form action="" method="post" >
-                    {%csrf_token%}
-                <table>
-                    {{form.as_table}}
-                </table>
+    {% if object %}
+        <h1>Edit <span>{{ object.name }}</span></h1>
+    {% else %}
+        <h1>Create a Meetup</h1>
+    {% endif %}
+    <form action="" method="post" >
+        {%csrf_token%}
+    <table>
+        {{form.as_table}}
+    </table>
+    
 
-                <input type="submit" value="Create Meetup" class="btn btn-secondary" name="" id="">
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+    <input type="submit" value="Create Meetup" class="btn btn-secondary" name="" id="">
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <script>
+        $('#id_date').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+    </script>
+        
 
 
 {% endblock %}

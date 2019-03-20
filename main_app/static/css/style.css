@@ -19,6 +19,9 @@ body{
       margin: 1em 0;
       padding: 0; 
   }
+ul {
+  list-style-type: none;
+}
   
   .navbar{
     background-color: #27476e;

@@ -7,7 +7,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import  UserForm,ParentForm
+from .forms import  UserForm,ParentForm, ChildForm
 from django.contrib import messages
 
 # Create your views here.
@@ -81,7 +81,7 @@ def CreateProfile(request):
             login(request,user)
             return redirect('events_list')
             # messages.success(request, 'Your profile was successfully updated!')
-            # return redirect('settings:profile')
+           
         else:
             messages.error(request, 'Please correct the error below.')
     else:
@@ -99,4 +99,28 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+
+def events_detail(request, event_id):
+    event = Event.objects.get(id=event_id)
+    #instantiate child_form to be rendered in the template
+    child_form = ChildForm()
+    return render(
+        request,
+        'main_app/event_detail.html',
+        {'event': event, 'child_form': child_form}
+    )
+
+
+def add_child(request, event_id):
+   form = ChildForm(request.POST)
+
+   if form.is_valid():
+       new_child = form.save(commit=False)
+       new_child.event_id = event_id
+       new_child.user = request.user
+       new_child.parent = request.user.parent
+       new_child.save()
+   return redirect('event_detail', event_id=event_id)
+
+    
 
