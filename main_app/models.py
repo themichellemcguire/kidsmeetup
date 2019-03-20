@@ -11,11 +11,11 @@ ALLERGY_FOODS = (
     ('M', 'Milk'),
     ('E','Eggs'),
     ('P','Peanuts'),
-    # ('T','Tree nuts'),
-    # ('S' 'Soy'),
-    # ('W','Wheat'),
-    # ('F','Fish'),
-    # ('L','Shellfish')
+    ('T','Treenuts'),
+    ('S', 'Soy'),
+    ('W','Wheat'),
+    ('F','Fish'),
+    ('L','Shellfish')
 )
     
 
