@@ -7,18 +7,6 @@ from django.dispatch import receiver
 
 # Create your models here.
 
-ALLERGY_FOODS = (
-    ('M', 'Milk'),
-    ('E','Eggs'),
-    ('P','Peanuts'),
-    # ('T','Tree nuts'),
-    # ('S' 'Soy'),
-    # ('W','Wheat'),
-    # ('F','Fish'),
-    # ('L','Shellfish')
-)
-    
-
 class Parent(models.Model):
     name=models.CharField(max_length=100)
     address=models.CharField(max_length=100)
@@ -60,11 +48,7 @@ class Event(models.Model):
 class Child(models.Model):
     name=models.CharField(max_length=100)
     date_of_birth=models.DateField()
-    food_allergy=models.CharField(
-        max_length=1,
-        choices=ALLERGY_FOODS,
-        default=ALLERGY_FOODS[0][0]
-    )
+    description = models.TextField(max_length=250)
     parent=models.ForeignKey(Parent,on_delete=models.CASCADE)
     event=models.ForeignKey(Event,on_delete=models.CASCADE)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
