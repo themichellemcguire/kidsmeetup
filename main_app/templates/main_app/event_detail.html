@@ -16,6 +16,15 @@
                   <p>Parent Name: {{event.parent.name}}</p>
                 </div>
               </div>
+              {% for child in event.child_set.all%}
+              
+              <ul style="list-style-type: none;" class="list-group">
+                <li>{{child.name}}</li>
+                <li>{{child.description}}</li>
+              </ul>
+                
+              
+              {%endfor%}
               <form action="{%url 'add_child' event.id%}" method="post">
                 {%csrf_token%}
                 {{child_form.as_p}}

@@ -112,14 +112,15 @@ def events_detail(request, event_id):
 
 
 def add_child(request, event_id):
-    form = ChildForm(request.POST)
+   form = ChildForm(request.POST)
 
-    if form.is_valid():
-        new_child = form.save(commit=False)
-        new_child.event_id = event_id
-        new_child.save()
-    return redirect('event_detail', event_id=event_id)
-
+   if form.is_valid():
+       new_child = form.save(commit=False)
+       new_child.event_id = event_id
+       new_child.user = request.user
+       new_child.parent = request.user.parent
+       new_child.save()
+   return redirect('event_detail', event_id=event_id)
 
     
 
