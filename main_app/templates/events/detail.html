@@ -3,19 +3,32 @@
 
 <h1>Details</h1>
 
-<a href="/events/{{event.name}}">
-    <div class="card">
 
-        <div class="card-body">
+<div class="card">
 
-            <span>{{event.name}}</span>
-            <p>Description:{{event.description}}</p>
-            <a href="{% url 'events_update' event.name%}">Edit</a>
-            <a href="{%url 'events_delete' event.name%}">Delete</a>
-        </div>
-        
+    <div class="card-body">
+        <h1>outside the div</h1>
+        <span class="details">{{event.name}}</span>
+        <p class="details">Description:{{event.description}}</p>
+        <a href="{% url 'events_update' event.id%}" class="btn btn-warning">Edit</a>
+        <a href="{% url 'events_delete' event.id%}" class="btn btn-danger">Delete</a>
+        {% for child in event.child_set.all%}
+        <span>{{child.name}}</span>
+        <p>{{child.date_of_birth}}</p>
+        <p>Description:{{child.description}}</p>
+
+
+        {% endfor %}
+        <p style="color: #27476e;">{{child.name}}</p>
+        <p style="color:#27476e;">{{child.get_description_display}}</p>
+
     </div>
-</a>
+</div>
+
+
+
+
+
 
 
 
