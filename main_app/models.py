@@ -35,7 +35,6 @@ def create_user_profile(sender, instance, created, **kwargs):
 def save_user_profile(sender, instance, **kwargs):
     instance.parent.save()
 
-
     def __str__(self):
         return self.name
     
@@ -73,7 +72,7 @@ class Event(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('events_detail',kwargs={'pk':self.id})
+        return reverse('events_detail',kwargs={'event_id':self.id})
     
     
     
