@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>My Childs</h1>
+{% for c in child_list %}
+
+<a href="{% url 'childs_detail' c.id %}">
+<div class="card" style="border-radius: 20px;">
+    <div class="card-content">
+        <div class="card-header-blue">
+                <h2 class="card-heading">{{c.name.upper}}</h2>
+        </div>
+            <p>{{c.date_of_birth}}</p>
+            <p>{{c.food_allergy}}</p>
+    </div>
+</div>
+</a>
+
+{% endfor %}
+    
+{% endblock %}

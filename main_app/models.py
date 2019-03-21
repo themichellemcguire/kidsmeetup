@@ -7,9 +7,7 @@ from django.dispatch import receiver
 
 # Create your models here.
 
-
-
-ALLERGY_FOODS = (
+ALLERGY = (
     ('M', 'Milk'),
     ('E','Eggs'),
     ('P','Peanuts'),
@@ -40,6 +38,26 @@ def save_user_profile(sender, instance, **kwargs):
     def __str__(self):
         return self.name
     
+
+class Child(models.Model):
+    name=models.CharField(max_length=100)
+    date_of_birth=models.DateField()
+    food_allergy=models.CharField(
+        max_length=1,
+        choices=ALLERGY,
+        default=ALLERGY[0][0]
+    )
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def get_absolute_url(self):
+        return reverse('childs_detail',kwargs={'pk':self.id})
+
+    # def __str__(self):
+        # Nice method for obtaining the friendly value of a Field.choice
+        # return self.get_food_allergy_display()
+    
+    def __str__(self):
+        return self.name
     
 
 
@@ -47,8 +65,8 @@ class Event(models.Model):
     name=models.CharField(max_length=100)
     address=models.CharField(max_length=100)
     date=models.DateTimeField()
-    parent=models.ForeignKey(Parent,on_delete=models.CASCADE)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
+    childs = models.ManyToManyField(Child)
 
     def __str__(self):
         return self.name
@@ -58,16 +76,9 @@ class Event(models.Model):
     
     
     
-class Child(models.Model):
-    name=models.CharField(max_length=100)
-    date_of_birth=models.DateField()
-    description = models.TextField(max_length=250)
-    parent=models.ForeignKey(Parent,on_delete=models.CASCADE)
-    event=models.ForeignKey(Event,on_delete=models.CASCADE)
-    user=models.ForeignKey(User,on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.name
+
+    
     
     
     

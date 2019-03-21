@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   
+        <h1>Child Detail</h1>
+    
+    
+        
+        <div class="row">
+                <div class="col s6 col-offset-3">
+                  <div class="card">
+                    <div class="card-content">
+                      <span class="card-title">{{ child.name }}</span>
+                      <p>Date of Birth: {{ child.date_of_birth }}</p>
+                      <p>Food Allergy: {{child.get_food_allergy_display}}</p>
+                      <p>Parent Name: {{user.parent.name}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{% url 'childs_update' child.id %}">Edit</a>
+                        <a href="{% url 'childs_delete' child.id %}">Delete</a>
+                      </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+    
+
+
+{% endblock %}
