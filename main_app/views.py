@@ -66,14 +66,9 @@ class EventDelete(LoginRequiredMixin, DeleteView):
     success_url = '/events/'
 
 class ChildList(LoginRequiredMixin, ListView):
-    # model = Child
     template_name='main_app/child_list.html'
     def get_queryset(self):
         return Child.objects.filter(user=self.request.user)
-
-        
-    #     # self.user = get_object_or_404(User, name=self.kwargs['id'])
-    #     # return Child.objects.filter(user=self.user)
 
 
 class ChildDetail(LoginRequiredMixin, DetailView):
