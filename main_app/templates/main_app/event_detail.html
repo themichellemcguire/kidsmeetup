@@ -35,7 +35,9 @@
                     <div class="card-action">
                       <form action="{% url 'unassoc_child' event.id c.id %}" method="post">
                       {% csrf_token %}
+                      {% if c.user.id == user.id %}
                       <button type="submit" class="btn">Remove</button>
+                      {% endif %}
                       </form>
                     </div>
               </div>
