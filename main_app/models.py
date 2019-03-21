@@ -19,6 +19,7 @@ ALLERGY = (
 )
     
 
+
 class Parent(models.Model):
     name=models.CharField(max_length=100)
     address=models.CharField(max_length=100)
@@ -52,9 +53,9 @@ class Child(models.Model):
     def get_absolute_url(self):
         return reverse('childs_detail',kwargs={'pk':self.id})
 
-    def __str__(self):
+    # def __str__(self):
         # Nice method for obtaining the friendly value of a Field.choice
-        return self.get_food_allergy_display()
+        # return self.get_food_allergy_display()
     
     def __str__(self):
         return self.name

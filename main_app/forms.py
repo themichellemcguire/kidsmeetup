@@ -1,6 +1,7 @@
 from django import forms
-from .models import Parent
+from .models import Parent, Child, Event
 from django.contrib.auth.models import User
+from django.forms import ModelForm
 
 
 class UserForm(forms.ModelForm):
@@ -13,3 +14,5 @@ class ParentForm(forms.ModelForm):
     class Meta:
         model = Parent
         fields = ('name', 'address', 'phone')
+
+
