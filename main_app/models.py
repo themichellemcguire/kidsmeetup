@@ -77,14 +77,8 @@ class Event(models.Model):
     
     
 
-<<<<<<< HEAD
-    def __str__(self):
-        return self.name
-
-=======
 
     
     
     
->>>>>>> 4f7e3b759e527b5bde570228fde0fca164d1840c
     

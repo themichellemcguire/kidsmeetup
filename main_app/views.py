@@ -16,10 +16,6 @@ from django.contrib.auth.models import User
 
 class EventList(ListView):
     model = Event
-<<<<<<< HEAD
-# LoginRequiredMixin
-class EventCreate(CreateView):
-=======
 
 
 class EventDetail(LoginRequiredMixin, DetailView):
@@ -43,7 +39,6 @@ def events_detail(request, event_id):
   })
 
 class EventCreate(LoginRequiredMixin, CreateView):
->>>>>>> 4f7e3b759e527b5bde570228fde0fca164d1840c
     model = Event
     fields = [
         'name',
