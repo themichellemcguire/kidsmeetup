@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <nav id ="navbar"class="navbar navbar-expand-md bg-#27476e">
+    <nav id ="navbar"class="navbar navbar-expand-md justify-content-betweenbg-#27476e">
         <img class="navbar-brand" src="https://i.imgur.com/r0WQAnN.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link ml-auto" href="#">Profile</a>
                     </li>
                     <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Sign Out</a></li>
                     {%else%}
