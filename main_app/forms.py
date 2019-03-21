@@ -15,7 +15,4 @@ class ParentForm(forms.ModelForm):
         model = Parent
         fields = ('name', 'address', 'phone')
 
-class ChildForm(ModelForm):
-    class Meta:
-        model = Child
-        fields = ('name', 'date_of_birth','description')
+

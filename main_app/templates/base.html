@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <nav id ="navbar"class="navbar navbar-expand-md" style="background-color: #27476e">
+    <nav id ="navbar"class="navbar navbar-expand-md justify-content-betweenbg-#27476e">
         <img class="navbar-brand" src="https://i.imgur.com/r0WQAnN.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,11 +38,13 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'events_list'%}">View All Meetups</a>
                             <a class="dropdown-item" href="{% url 'events_create'%}">Add a Meetup</a>
+                            <a class="dropdown-item" href="{% url 'childs_create'%}">Add a Child</a>
+                            <a class="dropdown-item" href="{% url 'childs_list'%}">View My Childs</a>
                             
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link ml-auto" href="#">Profile</a>
                     </li>
                     <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Sign Out</a></li>
                     {%else%}
@@ -54,12 +56,16 @@
     </nav>
 
     
-    <div class="container" style="background-color: #001d4a">
+    <div class="container bg-#001d4a">
         {%block content%}
         {% endblock %}
     </div>
 
+<<<<<<< HEAD
     <footer class="footer fixed-bottom" style="background-color: #27476e">
+=======
+    <footer class="page-footer bg-#27476e">
+>>>>>>> 16e8258d0619b377d678438a60524c589764e78b
         <div class="right">All rights reserved, &copy:2019 Kids Meetup &nbsp;</div>
     </footer>
 
