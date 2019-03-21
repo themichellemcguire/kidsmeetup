@@ -8,6 +8,7 @@ from django.dispatch import receiver
 # Create your models here.
 
 ALLERGY = (
+    ('N', 'No Allergy'),
     ('M', 'Milk'),
     ('E','Eggs'),
     ('P','Peanuts'),
@@ -15,7 +16,8 @@ ALLERGY = (
     ('S', 'Soy'),
     ('W','Wheat'),
     ('F','Fish'),
-    ('L','Shellfish')
+    ('L','Shellfish'),
+    
 )
     
 
