@@ -1,5 +1,5 @@
 # Kids Meetup
-> Social activities of our kids!! Awesome! right? But how and where? We have those answers. In out everyday busy life,our kids are getting bored and find the fun at the device. Not right ya. But in our neighbourhood, we can be feeling safer place for fun of our kids. So our Project name is KIDS MEETUP. 
+> Social activities of our kids!! Awesome! right? But how and where? We have those answers. In our everyday busy life, our kids are getting bored and find the fun at devices. Not right, yes? But in our neighbourhood, we can be feeling like it's a safer place for fun for our kids. So our Project name is KIDS MEETUP. 
 
 ## Table of contents
 * [General info](#general-info)
@@ -37,7 +37,7 @@ In our busy life, out kidz are getting glued in the device,which is not good for
 
 * [pitch-deck](https://github.com/fagleyali/kidsmeetup)
 * [trello](https://trello.com/b/uNiUV3Hu)
-* [Heroku](https://id.heroku.com/login)
+* [Heroku](https://kidsmeetupdatx.herokuapp.com)
 
 ## RESTful_API
 
@@ -79,7 +79,6 @@ List of features ready and TODOs for future development
 
 To-do list:
 * Better design to be used
-* To choose Api for our project
 * To make proper route, class based views functions, templates for event_list, event_detail, child_list, child_detail
 * to make one to many relationship between event table and child table, parent table and child table. 
 * to make a food table and create many to many relationship between food to child table.
@@ -95,7 +94,4 @@ Project is: pre project work just started. We are preparing the set up for the p
 Add here credits. Project inspired by #GENERAL ASSEMBLY#
 
 ## Contact
-Created by [@DATX team]- feel free to contact me!
-
-TEST
-
+Created by [@DATX team]- feel free to contact us!
