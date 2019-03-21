@@ -1,14 +1,15 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Event
+from .models import Event, Child
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import  UserForm,ParentForm
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -19,6 +20,23 @@ class EventList(LoginRequiredMixin, ListView):
 
 class EventDetail(LoginRequiredMixin, DetailView):
     model = Event
+
+@login_required
+def events_detail(request, event_id):
+  event = Event.objects.get(id=event_id)
+  # Get the toys the cat doesn't have
+  childs_event_doesnt_have = Child.objects.exclude(id__in = event.childs.all().values_list('id')).filter(user=request.user)
+  # Instantiate FeedingForm to be rendered in the template
+  c=childs_event_doesnt_have
+  
+  print(c)
+
+  return render(request, 'main_app/event_detail.html', {
+    # Pass the cat and feeding_form as context
+    'event': event, 
+    # Add the toys to be displayed
+    'childs': childs_event_doesnt_have
+  })
 
 class EventCreate(LoginRequiredMixin, CreateView):
     model = Event
@@ -46,6 +64,63 @@ class EventUpdate(LoginRequiredMixin,UpdateView):
 class EventDelete(LoginRequiredMixin, DeleteView):
     model=Event
     success_url = '/events/'
+
+class ChildList(LoginRequiredMixin, ListView):
+    # model = Child
+    template_name='main_app/child_list.html'
+    def get_queryset(self):
+        return Child.objects.filter(user=self.request.user)
+
+        
+    #     # self.user = get_object_or_404(User, name=self.kwargs['id'])
+    #     # return Child.objects.filter(user=self.user)
+
+
+class ChildDetail(LoginRequiredMixin, DetailView):
+    model = Child
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+class ChildCreate(LoginRequiredMixin, CreateView):
+    model=Child
+    fields= [
+        'name',
+        'date_of_birth',
+        'food_allergy'
+    ]
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+class ChildUpdate(LoginRequiredMixin, UpdateView):
+    model=Child
+    fields=[
+        'name',
+        'date_of_birth',
+        'food_allergy'
+    ]
+
+class ChildDelete(LoginRequiredMixin, DeleteView):
+    model=Child
+    success_url='/childs/'
+
+@login_required
+def assoc_child(request, event_id, child_id):
+    Event.objects.get(id=event_id).childs.add(child_id)
+    return redirect('events_detail', event_id=event_id)
+
+@login_required
+def unassoc_child(request, event_id, child_id):
+    Event.objects.get(id=event_id).childs.remove(child_id)
+    return redirect('events_detail', event_id=event_id)
+
+    
+
+
+
 
 
 
