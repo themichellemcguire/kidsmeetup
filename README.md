@@ -95,7 +95,7 @@ Project is: pre project work just started. We are preparing the set up for the p
 Add here credits. Project inspired by #GENERAL ASSEMBLY#
 
 ## Contact
-Created by [@DATX team]- feel free to contact me!
+Created by [@DATX team]- feel free to contact us!
 
-TEST
+
 
