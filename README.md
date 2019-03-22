@@ -1,6 +1,5 @@
-![alt text](https://imgur.com/a/svgJLW6)
 # Kids Meetup
-> Social activities of our kids!! Awesome! right? But how and where? We have those answers. In out everyday busy life,our kids are getting bored and find the fun at the device. Not right ya. But in our neighbourhood, we can be feeling safer place for fun of our kids. So our Project name is KIDS MEETUP. 
+> Social activities of our kids!! Awesome, right? But how and where? We have those answers. In our everyday busy life, our kids are getting bored and find fun at the device. Not right! But in our neighborhood, we can feel safe knowing there's fun for our kids. So our project name is KIDS MEETUP. 
 
 ## Table of contents
 * [General info](#general-info)
@@ -47,12 +46,17 @@ In our busy life, out kidz are getting glued in the device,which is not good for
 
 RESTful API documentation.
 
-## Problems
+## Project Challenges
 1. Time: Time is very short to build up a full stack web application by a group of new developers. 
-2. Github: Its getting our nerve to resolve conflicts with .pyc. But learned a lot of these. 
+2. Github: Its getting on our nerves to resolve conflicts with .pyc. But learned a lot of these. 
 3. APIs: We searched for APIs to use, but didn't find any related things.
 4. Migrations: Model designing should be carefully crafted before starting coding.
 5. Heroku migrations: Another problem we found to migrate the modified model in the heroku. 
+
+## Group Challenges
+* Effective remote communication
+* Control Flow Management
+* Group roles and assignments (who does what)
 
 ## Features
 This app has some cool features! Such as:
