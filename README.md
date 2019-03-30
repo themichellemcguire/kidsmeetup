@@ -2,18 +2,25 @@
 > Social activities of our kids!! Awesome, right? But how and where? We have those answers. In our everyday busy life, our kids are getting bored and find fun at the device. Not right! But in our neighborhood, we can feel safe knowing there's fun for our kids. So our project name is KIDS MEETUP. 
 
 ## Table of contents
-* [General info](#general-info)
-* [Screenshots](#screenshots)
-* [Technologies](#technologies)
-* [Links](#links)
-* [RESTful API endpoints](#RESTful_API)
-* [Problems](#problems)
-* [Future enhancement](#futures)
-* [Setup](#setup)
-* [Features](#features)
-* [Status](#status)
-* [Inspiration](#inspiration)
-* [Contact](#contact)
+- [Kids Meetup](#kids-meetup)
+  - [Table of contents](#table-of-contents)
+  - [General info](#general-info)
+  - [Screenshots](#screenshots)
+      - [NOTE FROM REVIEWER:](#note-from-reviewer)
+  - [Technologies](#technologies)
+  - [Links](#links)
+  - [RESTful_API](#restfulapi)
+  - [Project Challenges](#project-challenges)
+  - [Group Challenges](#group-challenges)
+  - [Features](#features)
+  - [Futures](#futures)
+  - [Setup](#setup)
+  - [Code Examples](#code-examples)
+      - [NOTE FROM REVIEWER:](#note-from-reviewer-1)
+  - [Status](#status)
+  - [Inspiration](#inspiration)
+  - [Contact](#contact)
+      - [NOTE FROM REVIEWER:](#note-from-reviewer-2)
 
 ## General info
 In our busy life, out kidz are getting glued in the device,which is not good for our future. We just try to find the way for a safer and comfort place in our neighbourhood by this app.
@@ -29,6 +36,14 @@ In our busy life, out kidz are getting glued in the device,which is not good for
 ![meetups](./img/Meetups.png)
 ![mykidz](./img/mykidz.png)
 ![ERD](./img/ERD.pdf)
+
+<hr>
+
+#### NOTE FROM REVIEWER:
+
+> For your ERD, unfortunately, PDF files cannot be displayed using an image tag in markdown
+
+<hr>
 
 ## Technologies
 * HTML5, JavaScript ES6, CSS3, 
@@ -93,6 +108,33 @@ class Child(models.Model):
     parent=models.ForeignKey(Parent,on_delete=models.CASCADE)
     event=models.ForeignKey(Event,on_delete=models.CASCADE)
 
+<hr>
+
+#### NOTE FROM REVIEWER:
+
+> For Code insertion in markdown files you can format your document like this:
+
+
+```py
+from django.db import models
+
+class Parent(models.Model):
+    name=models.CharField(max_length=100)
+    address=models.CharField(max_length=100)
+
+class Event(models.Model):
+    name:models.CharField(max_length=2)
+    address:models.CharField(max_length=100)
+    parent=models.ForeignKey(Parent,on_delete=100)
+    
+class Child(models.Model):
+    name=models.CharField(max_length=100)
+    date_of_birth=models.DateField()
+    parent=models.ForeignKey(Parent,on_delete=models.CASCADE)
+    event=models.ForeignKey(Event,on_delete=models.CASCADE)
+```
+
+<hr>
 
 
 To-do list:
@@ -117,3 +159,10 @@ Created by [@DATX team]- feel free to contact us!
 
 
 
+<hr>
+
+#### NOTE FROM REVIEWER:
+
+> You all did an amazing job on this README file. You also made a perfect use case with the variety of formatting options available for github flavored markdown. Apart from a few small typos, the syntax highlighting formatting, and the ERD not showing. You all did a fantastic job on this!!
+
+<hr>

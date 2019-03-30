@@ -58,6 +58,16 @@ class Child(models.Model):
         # Nice method for obtaining the friendly value of a Field.choice
         # return self.get_food_allergy_display()
     
+    ## NOTE FROM REVIEWER:
+    """
+    Great job with your models here everyone; 
+    this was one of the most complex models 
+    I've seen in a django project in a while.
+
+    Always make sure to remove commented out
+    code from your production (master) branch.
+    """
+
     def __str__(self):
         return self.name
     

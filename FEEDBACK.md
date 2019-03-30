@@ -2,9 +2,35 @@
 
 # Project 3:<br>Build a Full-stack Django App as a Team
 
+
 | Team | Project Name | Reviewer | 
 |:---:|:---:|:---:|
 |**DATX** | **KidsMeetup** | **Daniel Scott**|
+
+## Overall Feeback:
+
+Michelle, Ali, and Drew, excellent work with this project! You all worked so hard and should be proud for having made such an amazing accomplishment as a team. Working on a web development project as a team is a wonderful experience and requires intense patience, but at the same time, it offers an enormous opportunity to grow as a developer/engineer.
+
+In regard to detailed feedback to your code, please see the comments I've left in these files:
+
+- [models.py](main_app/models.py)
+- [views.py](main_app/views.py)
+- [Template Feedback](main_app/templates/FEEDBACK.md)
+- [README](README.md)
+
+Rest assured, you met all of the technical requirements for this project! So congratulations on passing Unit 3!!
+
+In the meantime, feel free to contact me if you have any questions regarding this feedback!
+
+daniel.scott@generalassemb.ly
+
+Thank you!
+
+- Daniel Scott
+
+<hr>
+
+## Original Project Prompt is located below:
 
 ### Overview
 
