@@ -1,19 +1,24 @@
 # Kids Meetup
-> Social activities of our kids!! Awesome! right? But how and where? We have those answers. In our everyday busy life, our kids are getting bored and find the fun at devices. Not right, yes? But in our neighbourhood, we can be feeling like it's a safer place for fun for our kids. So our Project name is KIDS MEETUP. 
+
+Social activities of our kids!! Awesome, right? But how and where? We have those answers. In our everyday busy life, our kids are getting bored and find fun at the device. Not right! But in our neighborhood, we can feel safe knowing there's fun for our kids. So our project name is KIDS MEETUP. 
 
 ## Table of contents
-* [General info](#general-info)
-* [Screenshots](#screenshots)
-* [Technologies](#technologies)
-* [Links](#links)
-* [RESTful API endpoints](#RESTful_API)
-* [Problems](#problems)
-* [Future enhancement](#futures)
-* [Setup](#setup)
-* [Features](#features)
-* [Status](#status)
-* [Inspiration](#inspiration)
-* [Contact](#contact)
+- [Kids Meetup](#kids-meetup)
+  - [Table of contents](#table-of-contents)
+  - [General info](#general-info)
+  - [Screenshots](#screenshots)
+  - [Technologies](#technologies)
+  - [Links](#links)
+  - [RESTful_API](#restfulapi)
+  - [Project Challenges](#project-challenges)
+  - [Group Challenges](#group-challenges)
+  - [Features](#features)
+  - [Futures](#futures)
+  - [Setup](#setup)
+  - [Code Examples](#code-examples)
+  - [Status](#status)
+  - [Inspiration](#inspiration)
+  - [Contact](#contact)
 
 ## General info
 In our busy life, out kidz are getting glued in the device,which is not good for our future. We just try to find the way for a safer and comfort place in our neighbourhood by this app.
@@ -24,8 +29,13 @@ In our busy life, out kidz are getting glued in the device,which is not good for
 ![Wireframe1](./img/wireframe3.png)
 ![Wireframe1](./img/wireframe4.png)
 ![Wireframe1](./img/wireframe5.png)
-![Wireframe1](./img/wireframe6.png)
+![HomePage](./img/homepage.png)
+![loginpage](./img/loginpage.png)
+![meetups](./img/Meetups.png)
+![mykidz](./img/mykidz.png)
 ![ERD](./img/ERD.pdf)
+
+<hr>
 
 ## Technologies
 * HTML5, JavaScript ES6, CSS3, 
@@ -43,9 +53,31 @@ In our busy life, out kidz are getting glued in the device,which is not good for
 
 RESTful API documentation.
 
-## Problems
+## Project Challenges
+1. Time: Time is very short to build up a full stack web application by a group of new developers. 
+2. Github: Its getting on our nerves to resolve conflicts with .pyc. But learned a lot of these. 
+3. APIs: We searched for APIs to use, but didn't find any related things.
+4. Migrations: Model designing should be carefully crafted before starting coding.
+5. Heroku migrations: Another problem we found to migrate the modified model in the heroku. 
+
+## Group Challenges
+* Effective remote communication
+* Control Flow Management
+* Group roles and assignments (who does what)
+
+## Features
+This app has some cool features! Such as:
+1. We used extended user information in the name of parent profile. 
+2. We used one to one relation, one to many relation and many to many relation.
+3. We used class based view and related queryset to show the only login user's children.
 
 ## Futures
+There are a lot of thing we can do if we have some time
+1. We redesign our pages in terms of CSS
+2. We would integrate photo upload facility. 
+3. We could use third party API
+4. We could implement kidz sign in and sign out from the event
+5. We could implement sending notifications to parent's mobile.
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
@@ -68,14 +100,29 @@ class Child(models.Model):
     parent=models.ForeignKey(Parent,on_delete=models.CASCADE)
     event=models.ForeignKey(Event,on_delete=models.CASCADE)
 
+<hr>
 
-## Features
-List of features ready and TODOs for future development
-* Sign up for parents
-* Get notifications of the new events
-* able to choose food from the menu
-* able to find the name, address and contact no of the event generator
-* able to see the pics of other kids
+```py
+from django.db import models
+
+class Parent(models.Model):
+    name=models.CharField(max_length=100)
+    address=models.CharField(max_length=100)
+
+class Event(models.Model):
+    name:models.CharField(max_length=2)
+    address:models.CharField(max_length=100)
+    parent=models.ForeignKey(Parent,on_delete=100)
+    
+class Child(models.Model):
+    name=models.CharField(max_length=100)
+    date_of_birth=models.DateField()
+    parent=models.ForeignKey(Parent,on_delete=models.CASCADE)
+    event=models.ForeignKey(Event,on_delete=models.CASCADE)
+```
+
+<hr>
+
 
 To-do list:
 * Better design to be used

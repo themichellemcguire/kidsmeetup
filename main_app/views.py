@@ -152,6 +152,21 @@ def CreateProfile(request):
             return redirect('events_list')
             # messages.success(request, 'Your profile was successfully updated!')
            
+           ## NOTE FROM Reviewer
+           """
+           You combined the use of both function and class based views! 
+           We're happy you chose to practice using both of the view types.
+
+           For areas of opportunity, make sure you remove commented
+           out code before you commit to your production (master)
+           branch. For example, the commented out code on line 153.
+
+           Other than that, also ensure your code is formatted/indented
+           properly. The beautify extension available in VS Code 
+           is perfect for starting out with this.
+
+           Overall, great job on your views everyone!
+           """
         else:
             messages.error(request, 'Please correct the error below.')
     else:
